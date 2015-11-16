@@ -1,6 +1,7 @@
 
 require 'osvr_compatibility_aggregator/source_types/bare_web'
 require 'osvr_compatibility_aggregator/source_types/github_dir'
+require 'osvr_compatibility_aggregator/source_types/github_file'
 
 module OsvrCompatibilityAggregator
   # A collection that transparently iterates through elements that may include sub-elements.
@@ -27,4 +28,5 @@ module OsvrCompatibilityAggregator
 
   SourceCollection.include SourceTypes::BareWeb
   SourceCollection.include SourceTypes::GitHubDir
+  SourceCollection.include SourceTypes::GitHubFile
 end
