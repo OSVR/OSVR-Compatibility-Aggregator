@@ -1,8 +1,12 @@
+
+require 'osvr_compatibility_aggregator/source_types/bare_web'
+require 'osvr_compatibility_aggregator/source_types/github_dir'
+
 module OsvrCompatibilityAggregator
   # A collection that transparently iterates through elements that may include sub-elements.
   class SourceCollection
     attr_accessor :elements
-    def initialize(&block)
+    def initialize
       @elements = []
       yield self
       self
@@ -20,4 +24,7 @@ module OsvrCompatibilityAggregator
       end
     end
   end
+
+  SourceCollection.include SourceTypes::BareWeb
+  SourceCollection.include SourceTypes::GitHubDir
 end
