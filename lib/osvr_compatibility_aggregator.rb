@@ -1,5 +1,6 @@
-require 'osvr_compatibility_aggregator/version'
-
 module OsvrCompatibilityAggregator
-  # Your code goes here...
 end
+
+require 'osvr_compatibility_aggregator/version'
+require 'osvr_compatibility_aggregator/device_descriptors'
+require 'osvr_compatibility_aggregator/display_descriptors'

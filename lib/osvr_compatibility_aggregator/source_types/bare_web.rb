@@ -4,12 +4,12 @@ module OsvrCompatibilityAggregator
   module SourceTypes
     # Refers to a single URL's contents
     class BareWeb
-      attribute_accessor :URL
+      attr_accessor :URL
       def initialize(url)
         @URL = url
       end
 
-      def all
+      def all(&block)
         require 'open-uri'
         file = open(@URL)
         yield URL: @URL, data: file.read
@@ -17,7 +17,7 @@ module OsvrCompatibilityAggregator
     end
 
     # Create a source for a single web page.
-    def bare_web(url)
+    def self.bare_web(url)
       BareWeb.new url
     end
   end
