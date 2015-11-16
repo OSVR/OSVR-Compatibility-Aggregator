@@ -5,21 +5,24 @@ module OsvrCompatibilityAggregator
     # Refers to a single URL's contents
     module BareWeb
       class BareWebSource
-        attr_accessor :URL
-        def initialize(url)
-          @URL = url
+        def initialize(url, args = {})
+          @info = args
+          @info[:url] = url
         end
 
-        def all(&block)
-          require 'open-uri'
-          file = open(@URL)
-          yield URL: @URL, data: file.read
+        def all
+          unless @info[:data]
+            require 'open-uri'
+            remote_file = open(@info[:url])
+            @info[:data] = remote_file.read
+          end
+          yield @info
         end
       end
 
       # Create a source for a single web page.
-      def bare_web(url)
-        add BareWebSource.new(url)
+      def bare_web(url, args = {})
+        add BareWebSource.new(url, args)
       end
     end
   end

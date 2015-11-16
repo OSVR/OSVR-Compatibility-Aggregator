@@ -13,9 +13,7 @@ module OsvrCompatibilityAggregator
         end
 
         def all
-          require 'open-uri'
-          file = open(@URL)
-          yield URL: @URL, data: file.read
+          throw "not yet implemented!"
         end
       end
 

@@ -14,7 +14,7 @@ shared_examples 'JSON data collection' do |parameter|
 
     it 'returns a collection with URL elements' do
       parameter.each do |a|
-        expect(a[:URL])
+        expect(a[:url])
       end
     end
 
