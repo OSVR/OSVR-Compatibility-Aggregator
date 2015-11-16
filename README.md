@@ -1,12 +1,10 @@
-# OsvrCompatibilityAggregator
+# OSVR Compatibility Aggregator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/osvr_compatibility_aggregator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[OSVR][] has a rich system of JSON metadata. This gem lets you retrieve (from GitHub and the web) and interact with that metadata for "out-of-band" purposes, like generating compatibility web pages.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'osvr_compatibility_aggregator'
@@ -32,5 +30,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/osvr_compatibility_aggregator.
-
+Bug reports and pull requests are welcome on GitHub at <https://github.com/OSVR/OSVR-Compatibility-Aggregator>.
