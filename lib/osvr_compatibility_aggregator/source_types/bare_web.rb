@@ -10,7 +10,7 @@ module OsvrCompatibilityAggregator
           @info[:url] = url
         end
 
-        def all
+        def each
           unless @info[:data]
             require 'open-uri'
             remote_file = open(@info[:url])

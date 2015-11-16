@@ -14,7 +14,7 @@ module OsvrCompatibilityAggregator
           @info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{@info[:branch]}/#{file}"
         end
 
-        def all
+        def each
           unless @info[:data]
             require 'open-uri'
             remote_file = open(@info[:raw_url])

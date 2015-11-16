@@ -12,7 +12,7 @@ module OsvrCompatibilityAggregator
           @dir = args[:dir]
         end
 
-        def all
+        def each
           throw "not yet implemented!"
         end
       end
