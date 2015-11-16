@@ -5,9 +5,7 @@ module OsvrCompatibilityAggregator
   def self.display_descriptors
     ret = SourceCollection.new
     ret.elements = [
-      SourceTypes::bare_web('https://github.com/OSVR/OSVR-Core/blob/master/plugins/multiserver/com_osvr_Multiserver_OSVRHackerDevKit.json'),
-      SourceTypes::bare_web('https://github.com/OSVR/OSVR-Core/blob/master/plugins/multiserver/com_osvr_Multiserver_RazerHydra.json'),
-      SourceTypes::bare_web('https://github.com/OSVR/OSVR-Core/blob/master/plugins/multiserver/com_osvr_Multiserver_YEI_3Space_Sensor.json')
+      SourceTypes.bare_web('https://raw.githubusercontent.com/OSVR/OSVR-Core/master/apps/displays/OSVR_HDK_1_1.json')
     ]
     ret
   end
