@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'A gem for retrieving and interacting with OSVR JSON descriptors of all sorts, for a variety of purposes not limited to but including web page generation.'
   spec.homepage      = 'https://github.com/OSVR/OSVR-Compatibility-Aggregator'
 
-  spec.files         = `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
