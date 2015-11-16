@@ -9,8 +9,9 @@ module OsvrCompatibilityAggregator
           repo = args[:repo]
           file = args[:file]
           @info = args
-          @info[:url] = "https://github.com/#{repo}/blob/master/#{file}"
-          @info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/blob/master/#{file}"
+          @info[:branch] = 'master' unless @info[:branch]
+          @info[:url] = "https://github.com/#{repo}/blob/#{@info[:branch]}/#{file}"
+          @info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{@info[:branch]}/#{file}"
         end
 
         def all
