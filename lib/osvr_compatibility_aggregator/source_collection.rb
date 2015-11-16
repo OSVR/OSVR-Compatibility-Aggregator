@@ -7,7 +7,8 @@ module OsvrCompatibilityAggregator
   # A collection that transparently iterates through elements that may include sub-elements.
   class SourceCollection
     attr_accessor :elements
-    def initialize
+    def initialize(args = {})
+      @info = args
       @elements = []
       yield self
       self
@@ -23,6 +24,14 @@ module OsvrCompatibilityAggregator
           yield @info.merge(e)
         end
       end
+    end
+
+    # Create a nested collection that has some default shared values
+    def collection(args = {})
+      new_col = SourceCollection.new(args) do |s|
+        yield s
+      end
+      add new_col
     end
   end
 
