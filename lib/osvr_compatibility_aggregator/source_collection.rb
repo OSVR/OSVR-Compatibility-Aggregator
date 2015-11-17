@@ -33,9 +33,9 @@ module OsvrCompatibilityAggregator
       end
       add new_col
     end
-  end
 
-  SourceCollection.include SourceTypes::BareWeb
-  SourceCollection.include SourceTypes::GitHubDir
-  SourceCollection.include SourceTypes::GitHubFile
+    include SourceTypes::BareWeb
+    include SourceTypes::GitHubDir
+    include SourceTypes::GitHubFile
+  end
 end
