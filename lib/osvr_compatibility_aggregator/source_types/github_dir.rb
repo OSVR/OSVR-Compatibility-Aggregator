@@ -1,3 +1,4 @@
+require 'octokit'
 
 
 module OsvrCompatibilityAggregator
@@ -5,15 +6,21 @@ module OsvrCompatibilityAggregator
     # Refers recursively to all files in a repo with the .json extension.
     module GitHubDir
       class GitHubDirSource
-        attr_accessor :repo
-        attr_accessor :dir
         def initialize(args)
+          @info = args
           @repo = args[:repo]
           @dir = args[:dir]
         end
 
         def each
-          throw "not yet implemented!"
+          require 'open-uri'
+          contents = Octokit.contents @repo, path: @dir
+          contents.each do |f|
+            next unless f['name'].end_with? '.json'
+            remote_file = open(f['download_url'])
+            data = remote_file.read
+            yield @info.merge url: f['html_url'], raw_url: f['download_url'], data: data
+          end
         end
       end
 
