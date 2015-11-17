@@ -19,6 +19,10 @@ module OsvrCompatibilityAggregator
                     file: 'plugins/opencv/com_osvr_VideoCapture_OpenCV.json',
                     sample_config: 'https://github.com/OSVR/OSVR-Core/blob/master/apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json'
 
+      s.github_dir repo: 'OSVR/OSVR-Core',
+                   dir: 'apps/external-devices/device-descriptors',
+                   note: 'These are external devices supported using VRPN and configuration files bundled with OSVR-Core'
+
       s.github_file repo: 'OSVR/OSVR-Leap-Motion',
                     file: 'com_osvr_LeapMotion.json'
 
