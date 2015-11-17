@@ -1,10 +1,9 @@
 require 'octokit'
 require 'faraday-http-cache'
-require 'oj'
 
 # Enable caching for GitHub API
 stack = Faraday::RackBuilder.new do |builder|
-  builder.use Faraday::HttpCache, serializer: Oj
+  builder.use Faraday::HttpCache
   builder.use Octokit::Response::RaiseError
   builder.adapter Faraday.default_adapter
 end
