@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'guard'
   spec.add_development_dependency 'guard-rspec'
   spec.add_dependency 'octokit'
+  spec.add_dependency 'faraday-http-cache'
   spec.add_dependency 'oj'
   spec.add_dependency 'json-minify'
 end
