@@ -3,5 +3,11 @@ require 'osvr_compatibility_aggregator'
 require 'pp'
 
 OsvrCompatibilityAggregator.device_descriptors.each do |d|
+  d[:data] = OsvrCompatibilityAggregator.parse d[:data]
+  pp d
+end
+
+OsvrCompatibilityAggregator.display_descriptors.each do |d|
+  d[:data] = OsvrCompatibilityAggregator.parse d[:data]
   pp d
 end
