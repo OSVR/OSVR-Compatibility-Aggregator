@@ -1,4 +1,4 @@
-
+require 'osvr_compatibility_aggregator/lazy_remote_json'
 
 module OsvrCompatibilityAggregator
   module SourceTypes
@@ -8,18 +8,14 @@ module OsvrCompatibilityAggregator
         def initialize(args)
           repo = args[:repo]
           file = args[:file]
-          @info = args
-          @info[:branch] = 'master' unless @info[:branch]
-          @info[:url] = "https://github.com/#{repo}/blob/#{@info[:branch]}/#{file}"
-          @info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{@info[:branch]}/#{file}"
+          info = args
+          info[:branch] = 'master' unless info[:branch]
+          info[:url] = "https://github.com/#{repo}/blob/#{@info[:branch]}/#{file}"
+          info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{@info[:branch]}/#{file}"
+          @info = LazyRemoteJson.new info
         end
 
         def each
-          unless @info[:data]
-            require 'open-uri'
-            remote_file = open(@info[:raw_url])
-            @info[:data] = remote_file.read
-          end
           yield @info
         end
       end

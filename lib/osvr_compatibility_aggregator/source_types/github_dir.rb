@@ -1,5 +1,6 @@
 require 'octokit'
 require 'faraday-http-cache'
+require 'osvr_compatibility_aggregator/lazy_remote_json'
 
 # Enable caching for GitHub API
 stack = Faraday::RackBuilder.new do |builder|
@@ -25,9 +26,7 @@ module OsvrCompatibilityAggregator
           contents = Octokit.contents @repo, path: @dir
           contents.each do |f|
             next unless f['name'].end_with? '.json'
-            remote_file = open(f['download_url'])
-            data = remote_file.read
-            yield @info.merge url: f['html_url'], raw_url: f['download_url'], data: data
+            yield LazyRemoteJson.new(@info.merge url: f['html_url'], raw_url: f['download_url'])
           end
         end
       end

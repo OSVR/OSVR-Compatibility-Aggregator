@@ -1,4 +1,4 @@
-
+require 'osvr_compatibility_aggregator/lazy_remote_json'
 
 module OsvrCompatibilityAggregator
   module SourceTypes
@@ -6,16 +6,12 @@ module OsvrCompatibilityAggregator
     module BareWeb
       class BareWebSource
         def initialize(url, args = {})
-          @info = args
-          @info[:url] = url
+          info = args
+          info[:url] = url
+          @info = LazyRemoteJson.new info
         end
 
         def each
-          unless @info[:data]
-            require 'open-uri'
-            remote_file = open(@info[:url])
-            @info[:data] = remote_file.read
-          end
           yield @info
         end
       end
