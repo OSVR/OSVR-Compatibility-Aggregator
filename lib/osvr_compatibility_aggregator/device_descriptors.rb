@@ -21,7 +21,7 @@ module OsvrCompatibilityAggregator
 
       s.github_dir repo: 'OSVR/OSVR-Core',
                    dir: 'apps/external-devices/device-descriptors',
-                   note: 'These are external devices supported using VRPN and configuration files bundled with OSVR-Core'
+                   note: 'External device supported using VRPN and descriptor/configuration files bundled with OSVR-Core'
 
       s.github_file repo: 'OSVR/OSVR-Leap-Motion',
                     file: 'com_osvr_LeapMotion.json'
