@@ -12,12 +12,15 @@ module OsvrCompatibilityAggregator
     def data
       unless @info[:data]
         require 'open-uri'
-        url = @info[:raw_url]
-        url = @info[:url] unless url
-        remote_file = open(url)
-        unless remote_file.status[0] == "200"
-          throw "Error reading #{url} : #{remote_file.status.to_s}"
+        if @info[:raw_url]
+          url = @info[:raw_url]
+        elsif @info[:url]
+          url = @info[:url]
+        else
+          throw "No :url or :raw_url key in the LazyRemoteJson!"
         end
+        remote_file = open(url)
+        throw "Error reading #{url} : #{remote_file.status.to_s}" unless remote_file.status[0] == '200'
         @info[:data] = remote_file.read
       end
       @info[:data]
@@ -43,7 +46,9 @@ module OsvrCompatibilityAggregator
     end
 
     def to_hash
-      @info.merge(data: data, json: json)
+      data
+      json
+      @info
     end
   end
 end
