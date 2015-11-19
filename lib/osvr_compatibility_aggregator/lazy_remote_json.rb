@@ -1,4 +1,5 @@
 require 'osvr_compatibility_aggregator/parse'
+require 'osvr_compatibility_aggregator/connection'
 
 module OsvrCompatibilityAggregator
   # Class wrapping a hash containing a lazily-retrieved, lazily-parsed remote JSON file.
@@ -12,12 +13,13 @@ module OsvrCompatibilityAggregator
     def data
       unless @info[:data]
         require 'open-uri'
-        remote_file = open(url)
-        throw "Error reading #{url} : #{remote_file.status.to_s}" unless remote_file.status[0] == '200'
-        @info[:data] = remote_file.read
+
         url = @info[:raw_url]
         url ||= @info[:url]
         throw "No :url or :raw_url key in the LazyRemoteJson!" unless url
+        response = Connection.get url
+        throw "Error reading #{url} : #{response.status.to_s}" unless response.success?
+        @info[:data] = response.body
       end
       @info[:data]
     end
