@@ -23,7 +23,6 @@ module OsvrCompatibilityAggregator
         end
 
         def each
-          require 'open-uri'
           contents = Octokit.contents @repo, path: @dir
           contents.each do |f|
             next unless f['name'].end_with? '.json'

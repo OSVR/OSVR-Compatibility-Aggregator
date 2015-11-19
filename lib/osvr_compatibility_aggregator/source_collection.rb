@@ -7,7 +7,7 @@ module OsvrCompatibilityAggregator
   # A collection that transparently iterates through elements that may include sub-elements.
   class SourceCollection
     include Enumerable
-    attr_accessor :elements
+
     def initialize(args = {})
       @info = args
       @elements = []
