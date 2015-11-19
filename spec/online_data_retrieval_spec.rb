@@ -14,26 +14,26 @@ shared_examples 'JSON data collection' do |parameter|
 
     it 'returns a collection with URL elements' do
       parameter.each do |a|
-        expect(a.url)
+        expect(a.url).to be_truthy
       end
     end
 
     it 'returns a collection with data elements' do
       parameter.each do |a|
-        expect(a.data)
+        expect(a.data).to be_truthy
       end
     end
 
     it 'returns a collection with JSON in its data' do
       parameter.each do |a|
-        expect(Oj.load(JSON.minify(a.data)))
-        expect(a.json)
+        expect(Oj.load(JSON.minify(a.data))).to be_truthy
+        expect(a.json).to be_truthy
       end
     end
 
     it 'returns a collection with JSON lazily-retrieved-and-parsed in its data' do
       parameter.each do |a|
-        expect(a.json)
+        expect(a.json).to be_truthy
       end
     end
 end
