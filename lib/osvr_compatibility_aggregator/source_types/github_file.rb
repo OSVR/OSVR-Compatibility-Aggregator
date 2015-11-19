@@ -5,6 +5,7 @@ module OsvrCompatibilityAggregator
     # Refers to a single file in a repo.
     module GitHubFile
       class GitHubFileSource
+        include Enumerable
         def initialize(args)
           repo = args[:repo]
           file = args[:file]

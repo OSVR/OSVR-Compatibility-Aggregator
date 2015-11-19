@@ -15,6 +15,7 @@ module OsvrCompatibilityAggregator
     # Refers recursively to all files in a repo with the .json extension.
     module GitHubDir
       class GitHubDirSource
+        include Enumerable
         def initialize(args)
           @info = args
           @repo = args[:repo]

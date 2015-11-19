@@ -5,6 +5,7 @@ module OsvrCompatibilityAggregator
     # Refers to a single URL's contents
     module BareWeb
       class BareWebSource
+        include Enumerable
         def initialize(url, args = {})
           info = args
           info[:url] = url
