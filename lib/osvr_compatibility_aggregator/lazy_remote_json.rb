@@ -12,8 +12,6 @@ module OsvrCompatibilityAggregator
     # Lazy URL retriever
     def data
       unless @info[:data]
-        require 'open-uri'
-
         url = @info[:raw_url]
         url ||= @info[:url]
         throw "No :url or :raw_url key in the LazyRemoteJson!" unless url
