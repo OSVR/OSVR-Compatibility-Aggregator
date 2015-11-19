@@ -28,7 +28,7 @@ module OsvrCompatibilityAggregator
 
     # Lazy JSON parser
     def json
-      @info[:json] = parse(data) unless @info[:json]
+      @info[:json] = OsvrCompatibilityAggregator.parse(data) unless @info[:json]
       @info[:json]
     end
 
