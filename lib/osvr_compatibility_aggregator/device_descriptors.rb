@@ -26,6 +26,10 @@ module OsvrCompatibilityAggregator
       s.github_file repo: 'OSVR/OSVR-Leap-Motion',
                     file: 'com_osvr_LeapMotion.json'
 
+      s.github_file repo: 'OSVR/OSVR-Nod',
+                    file: 'Plugin/NodOSVR.json',
+                    autodetected: true
+
       s.github_file repo: 'OSVR/OSVR-SMI',
                     file: 'com_osvr_SMI_EyeTracker.json',
                     sample_config: 'osvr_server_config.SMIeyeTracker.sample.json',
@@ -35,11 +39,6 @@ module OsvrCompatibilityAggregator
                     file: 'com_osvr_OculusRift.json',
                     sample_config: 'osvr_server_config.oculusrift.sample.json',
                     download: '[Pre-built Windows binaries](http://access.osvr.com/binary/oculus)'
-
-      # No device descriptor?
-      #s.github_file repo: 'OSVR/OSVR-Nod',
-      #              file: 'plugins/opencv/com_osvr_VideoCapture_OpenCV.json',
-      #              sample_config: 'https://github.com/OSVR/OSVR-Core/blob/master/apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json'
     end
   end
 end
