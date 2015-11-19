@@ -17,8 +17,10 @@ module OsvrCompatibilityAggregator
 
       s.github_file repo: 'OSVR/OSVR-Core',
                     file: 'plugins/opencv/com_osvr_VideoCapture_OpenCV.json',
-                    sample_config: 'apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json'
+                    sample_config: 'apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json',
+                    note: 'Provides access to a wide variety of video cameras/webcams on multiple platforms.'
 
+      # DIRECTORY with all the external-device (VRPN) device descriptors
       s.github_dir repo: 'OSVR/OSVR-Core',
                    dir: 'apps/external-devices/device-descriptors',
                    note: 'External device supported using VRPN and descriptor/configuration files bundled with OSVR-Core'
