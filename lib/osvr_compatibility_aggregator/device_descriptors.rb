@@ -13,11 +13,11 @@ module OsvrCompatibilityAggregator
       end
       s.github_file repo: 'OSVR/OSVR-Core',
                     file: 'plugins/multiserver/com_osvr_Multiserver_YEI_3Space_Sensor.json',
-                    sample_config: 'https://github.com/OSVR/OSVR-Core/blob/master/apps/sample-configs/osvr_server_config.HDKv1_YEI.xrightydown.sample.json'
+                    sample_config: 'apps/sample-configs/osvr_server_config.HDKv1_YEI.xrightydown.sample.json'
 
       s.github_file repo: 'OSVR/OSVR-Core',
                     file: 'plugins/opencv/com_osvr_VideoCapture_OpenCV.json',
-                    sample_config: 'https://github.com/OSVR/OSVR-Core/blob/master/apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json'
+                    sample_config: 'apps/sample-configs/osvr_server_config.OpenCVCamera.sample.json'
 
       s.github_dir repo: 'OSVR/OSVR-Core',
                    dir: 'apps/external-devices/device-descriptors',
