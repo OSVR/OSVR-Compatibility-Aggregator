@@ -10,9 +10,9 @@ module OsvrCompatibilityAggregator
           file = args[:file]
           info = args
           info[:branch] = 'master' unless info[:branch]
-          info[:url] = "https://github.com/#{repo}/blob/#{@info[:branch]}/#{file}"
-          info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{@info[:branch]}/#{file}"
-          @info = LazyRemoteJson.new info
+          info[:url] = "https://github.com/#{repo}/blob/#{info[:branch]}/#{file}"
+          info[:raw_url] = "https://raw.githubusercontent.com/#{repo}/#{info[:branch]}/#{file}"
+          @info = LazyRemoteJson.new(info)
         end
 
         def each

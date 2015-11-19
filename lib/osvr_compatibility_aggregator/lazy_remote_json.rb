@@ -34,6 +34,14 @@ module OsvrCompatibilityAggregator
       @info[m]
     end
 
+    def merge(h)
+      LazyRemoteJson.new(@info.merge(h))
+    end
+
+    def merge!(h)
+      @info.merge! h
+    end
+
     def to_hash
       @info.merge(data: data, json: json)
     end

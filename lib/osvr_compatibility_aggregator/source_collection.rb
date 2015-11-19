@@ -21,7 +21,8 @@ module OsvrCompatibilityAggregator
     def each
       @elements.each do |source|
         source.each do |e|
-          yield @info.merge(e)
+          e.merge! @info
+          yield e
         end
       end
     end
