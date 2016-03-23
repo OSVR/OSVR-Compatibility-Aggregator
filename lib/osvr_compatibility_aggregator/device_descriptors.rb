@@ -32,6 +32,13 @@ module OsvrCompatibilityAggregator
                     file: 'Plugin/NodOSVR.json',
                     autodetected: true
 
+      s.github_file repo: 'OSVR/OSVR-Vive',
+                    file: 'com_osvr_Vive.json',
+                    sample_config: 'osvr_server_config.vive.sample.json',
+                    autodetected: true,
+                    note: 'Configuration file specifies display descriptor.',
+                    download: '[Pre-built Windows binaries](http://access.osvr.com/binary/vive)'
+
       s.github_file repo: 'OSVR/OSVR-SMI',
                     file: 'com_osvr_SMI_EyeTracker.json',
                     sample_config: 'osvr_server_config.SMIeyeTracker.sample.json',
