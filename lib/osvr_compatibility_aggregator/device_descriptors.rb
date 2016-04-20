@@ -28,6 +28,9 @@ module OsvrCompatibilityAggregator
       s.github_file repo: 'OSVR/OSVR-Leap-Motion',
                     file: 'com_osvr_LeapMotion.json'
 
+      s.github_file repo: 'OSVR/OSVR-FSM9',
+                    file: 'com_osvr_Freespace.json'
+
       s.github_file repo: 'OSVR/OSVR-Nod',
                     file: 'Plugin/NodOSVR.json',
                     autodetected: true
