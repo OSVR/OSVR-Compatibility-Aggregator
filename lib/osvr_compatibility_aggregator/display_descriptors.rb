@@ -7,7 +7,7 @@ module OsvrCompatibilityAggregator
                    dir: 'apps/displays'
 
       s.github_file repo: 'OSVR/OSVR-Vive',
-                    file: 'displays/HTC_Vive_PRE.json'
+                    file: 'displays/HTC_Vive.json'
     end
   end
 end
