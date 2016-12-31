@@ -8,6 +8,9 @@ module OsvrCompatibilityAggregator
 
       s.github_file repo: 'OSVR/OSVR-Vive',
                     file: 'displays/HTC_Vive.json'
+
+      s.github_file repo: 'OSVR/OSVR-LaputaVR',
+                    file: 'displays/LaputaVR_Hero2560.json'
     end
   end
 end
