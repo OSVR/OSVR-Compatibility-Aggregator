@@ -51,6 +51,11 @@ module OsvrCompatibilityAggregator
                     file: 'com_osvr_OculusRift.json',
                     sample_config: 'osvr_server_config.oculusrift.sample.json',
                     download: '[Pre-built Windows binaries](http://access.osvr.com/binary/oculus)'
+
+      s.github_file repo: 'OSVR/OSVR-LaputaVR',
+                    file: 'com_osvr_Laputa.json',
+                    sample_config: 'osvr_server_config.laputa.sample.json',
+                    download: '[Pre-built Windows binaries](http://access.osvr.com/binary/laputavr)'
     end
   end
 end
