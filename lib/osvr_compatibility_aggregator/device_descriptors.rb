@@ -47,6 +47,16 @@ module OsvrCompatibilityAggregator
                     sample_config: 'osvr_server_config.SMIeyeTracker.sample.json',
                     download: '[Pre-built 32-bit Windows binaries](http://access.osvr.com/binary/smi)'
 
+      s.github_file repo: 'OSVR/OSVR-FOVE',
+                    file: 'com_osvr_fove_eyetracker.json',
+                    sample_config: 'osvr_server_config.fove.json',
+                    download: '[Pre-built 64-bit Windows binaries](http://access.osvr.com/binary/fove)'
+
+      s.github_file repo: 'OSVR/OSVR-FOVE',
+                    file: 'com_osvr_fove_tracker.json',
+                    sample_config: 'osvr_server_config.fove.json',
+                    download: '[Pre-built 64-bit Windows binaries](http://access.osvr.com/binary/fove)'
+
       s.github_file repo: 'OSVR/OSVR-Oculus-Rift',
                     file: 'com_osvr_OculusRift.json',
                     sample_config: 'osvr_server_config.oculusrift.sample.json',

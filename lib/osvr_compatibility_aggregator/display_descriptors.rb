@@ -6,6 +6,9 @@ module OsvrCompatibilityAggregator
       s.github_dir repo: 'OSVR/OSVR-Core',
                    dir: 'apps/displays'
 
+      s.github_file repo: 'OSVR/OSVR-FOVE',
+                    file: 'displays/FOVE_0.json'
+
       s.github_file repo: 'OSVR/OSVR-Vive',
                     file: 'displays/HTC_Vive.json'
 
