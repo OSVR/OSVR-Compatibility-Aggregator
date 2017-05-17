@@ -62,6 +62,30 @@ module OsvrCompatibilityAggregator
                     sample_config: 'osvr_server_config.oculusrift.sample.json',
                     download: '[Pre-built Windows binaries](http://access.osvr.com/binary/oculus)'
 
+      s.github_file repo: 'simlrh/OSVR-firmata',
+                    file: 'je_nourish_firmata.json'
+
+      s.github_file repo: 'simlrh/OSVR-OpenHMD',
+                    file: 'je_nourish_openhmd.json'
+
+      s.github_file repo: 'simlrh/OSVR-Kinect',
+                    file: 'je_nourish_kinectv1.json'
+
+      s.github_file repo: 'simlrh/OSVR-Kinect',
+                    file: 'je_nourish_kinectv2.json'
+
+      s.github_file repo: 'simlrh/OSVR-Wiimote',
+                    file: 'je_nourish_wiimote.json'
+
+      s.github_file repo: 'demonixis/OSVR-Ximmerse',
+                    file: 'net_demonixis_ximmerse.json'
+
+      s.github_file repo: 'simlrh/OSVR-psmoveapi',
+                    file: 'je_nourish_psmovecamera.json'
+
+      s.github_file repo: 'simlrh/OSVR-psmoveapi',
+                    file: 'je_nourish_psmovecontroller.json'
+
       s.github_file repo: 'OSVR/OSVR-LaputaVR',
                     file: 'com_osvr_Laputa.json',
                     sample_config: 'osvr_server_config.laputa.sample.json',
